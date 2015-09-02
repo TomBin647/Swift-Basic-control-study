@@ -93,12 +93,81 @@ class FourViewController: UIViewController,UIActionSheetDelegate,UIPickerViewDat
             break;
         case 3:
             NSLog("弹出一个时间选取器")
+            MynewView = UIView(frame: CGRectMake(0, 160, ks_screenWidth, 240))
+            //            MynewView.backgroundColor = UIColor.whiteColor()
+            self.view .addSubview(MynewView)
             
+            DatePicker = UIDatePicker (frame: CGRectMake(0, 0, ks_screenWidth,200))
+            // 设置样式，当前设为同时显示日期和时间
+            DatePicker.datePickerMode = UIDatePickerMode.DateAndTime
+            // 设置分钟表盘的时间间隔（必须能让60整除，默认是1分钟）
+            DatePicker.minuteInterval = 5
+            // 设置日期范围（超过日期范围，会回滚到最近的有效日期）
+            var dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            var maxDate = dateFormatter.dateFromString("2015-08-01 08:00:00")
+            var minDate = dateFormatter.dateFromString("2015-03-01 08:00:00")
+            DatePicker.maximumDate = maxDate
+            DatePicker.minimumDate = minDate
+            // 设置默认时间
+            DatePicker.date = NSDate()
+            // 响应事件（只要滚轮变化就会触发）
+            DatePicker.addTarget(self, action:"datePickerValueChange:", forControlEvents: UIControlEvents.ValueChanged)
+            MynewView.addSubview(DatePicker)
+            
+            
+            var DatePickerCancelButton = UIButton(frame: CGRectMake(0, 200, ks_screenWidth/3, 40))
+            DatePickerCancelButton.setTitle("取消", forState: UIControlState.Normal)
+            DatePickerCancelButton.backgroundColor = UIColor.redColor()
+            DatePickerCancelButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+            DatePickerCancelButton.addTarget(self, action: "DatePickerCancelButtonClick:", forControlEvents: UIControlEvents.TouchUpInside)
+            MynewView.addSubview(DatePickerCancelButton)
+            
+            var DatePickerSubmitButton = UIButton(frame: CGRectMake(ks_screenWidth/3, 200, ks_screenWidth/3, 40))
+            DatePickerSubmitButton.setTitle("确定", forState: UIControlState.Normal)
+            DatePickerSubmitButton.backgroundColor = UIColor.redColor()
+            DatePickerSubmitButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+            DatePickerSubmitButton.addTarget(self, action: "DatePickerSubmitButtonClick:", forControlEvents: UIControlEvents.TouchUpInside)
+            MynewView.addSubview(DatePickerSubmitButton)
+            
+            var DatePickerReplacementButton = UIButton(frame: CGRectMake(ks_screenWidth/3 * 2, 200, ks_screenWidth/3, 40))
+            DatePickerReplacementButton.setTitle("重置时间 ", forState: UIControlState.Normal)
+            DatePickerReplacementButton.backgroundColor = UIColor.redColor()
+            DatePickerReplacementButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+            DatePickerReplacementButton.addTarget(self, action: "DatePickerReplacementButtonClick:", forControlEvents: UIControlEvents.TouchUpInside)
+            MynewView.addSubview(DatePickerReplacementButton)
             break;
         default:
             break;
         }
     }
+    
+    /**
+    **时间选择器的取消和确定按钮
+    */
+    func DatePickerCancelButtonClick(sender:UIButton) {
+        DatePicker.removeFromSuperview()
+    }
+    
+    func DatePickerSubmitButtonClick(sender:UIButton) {
+        choosePickLabel.text = strLabel
+        DatePicker.removeFromSuperview()
+    }
+    
+    func DatePickerReplacementButtonClick(sender:UIButton) {
+        DatePicker.setDate(NSDate(), animated: true)
+    }
+    
+    func datePickerValueChange(sender:UIDatePicker) {
+        var date:NSDate = sender.date
+        var formatter:NSDateFormatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd-HH-mm:ss"
+        var dateString = formatter.stringFromDate(date)
+        choosePickLabel.text = dateString
+        strLabel = dateString
+    }
+    
+    
     func submitButtonClick(sender:UIButton) {
         if (choosePickLabel.text != nil) {
             choosePickLabel.text = strLabel
