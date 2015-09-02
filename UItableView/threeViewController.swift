@@ -24,6 +24,58 @@ class threeViewController: UIViewController,UITextFieldDelegate,UISearchBarDeleg
     
     var searchBar:UISearchBar!
     
+    
+    override func viewWillAppear(animated: Bool) {
+//        [[NSNotificationCenter defaultCenter] addObserver:self
+//            selector:@selector(keyboardWillShowHandler:)
+//        name:UIKeyboardWillShowNotification
+//        object:nil];
+//        [[NSNotificationCenter defaultCenter] addObserver:self
+//        selector:@selector(keyboardWillHideHandler:)
+//        name:UIKeyboardWillHideNotification
+//        object:nil];
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShowHandler:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHideHandler:", name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+    }
+    
+    func keyboardWillShowHandler(Object:NSNotification) {
+        
+        let userInfo:NSDictionary = Object.userInfo!
+        let keyboardInfo : (AnyObject!) = userInfo.objectForKey(UIKeyboardFrameEndUserInfoKey)
+        let keyboardRect:CGRect = keyboardInfo.CGRectValue() as CGRect
+        let height:CGFloat = keyboardRect.origin.y
+        let ty = height - (64 + 88)
+        if self.view.frame.origin.y != ty {
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                UIView.setAnimationBeginsFromCurrentState(true)
+               // UIView.setAnimationCurve(UIViewAnimationCurveEaseInOut)
+                self.view.frame.origin.y = -ty
+            })
+        }
+        
+    }
+    
+    func keyboardWillHideHandler(nsnotification:NSNotification) {
+        
+        let userInfo:NSDictionary = nsnotification.userInfo!
+        let keyboardInfo : (AnyObject!) = userInfo.objectForKey(UIKeyboardFrameEndUserInfoKey)
+        let keyboardRect:CGRect = keyboardInfo.CGRectValue() as CGRect
+        let height:CGFloat = keyboardRect.origin.y - keyboardRect.origin.y
+        let ty = height
+        if self.view.frame.origin.y != ty {
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                UIView.setAnimationBeginsFromCurrentState(true)
+                // UIView.setAnimationCurve(UIViewAnimationCurveEaseInOut)
+                self.view.frame.origin.y = ty
+            })
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "我是第三页"
@@ -36,7 +88,7 @@ class threeViewController: UIViewController,UITextFieldDelegate,UISearchBarDeleg
         segment.addTarget(self, action: "changValue:", forControlEvents: UIControlEvents.ValueChanged)
         self.view.addSubview(segment)
         
-        textField = UITextField(frame: CGRectMake(0, 300, ks_screenWidth, 40))
+        textField = UITextField(frame: CGRectMake(0, ks_screenHight-150, ks_screenWidth,44))
         textField.delegate = self
         textField.placeholder = "我是一个textField"
         textField.returnKeyType = UIReturnKeyType.Next
@@ -65,8 +117,7 @@ class threeViewController: UIViewController,UITextFieldDelegate,UISearchBarDeleg
         var barBtnItem2 = UIBarButtonItem(title: "搜索", style:UIBarButtonItemStyle.Plain, target:self, action:"threeBtnItemClicked:")
         toolBar.items = [flexibleSpace, backItem, flexibleSpace, barBtnItem1, flexibleSpace, barBtnItem2,flexibleSpace]
         
-        
-        
+    
     }
     
     func backItemClicked(sender:UIBarButtonItem) {
@@ -82,22 +133,14 @@ class threeViewController: UIViewController,UITextFieldDelegate,UISearchBarDeleg
         
         if (searchBar != nil) {
             searchBar.removeFromSuperview()
-            searchBar = UISearchBar(frame: CGRectMake(0, ks_screenHight-150, ks_screenWidth,44))
-            searchBar.placeholder = "请输入要搜索的内容"
-            searchBar.searchBarStyle = UISearchBarStyle.Default
-            searchBar.delegate = self
-            searchBar.showsCancelButton = true
-            searchBar.returnKeyType = UIReturnKeyType.Done
-            self.view.addSubview(searchBar)
-        } else {
-            searchBar = UISearchBar(frame: CGRectMake(0, ks_screenHight-150, ks_screenWidth,44))
-            searchBar.placeholder = "请输入要搜索的内容"
-            searchBar.searchBarStyle = UISearchBarStyle.Default
-            searchBar.delegate = self
-            searchBar.showsCancelButton = true
-            searchBar.returnKeyType = UIReturnKeyType.Done
-            self.view.addSubview(searchBar)
         }
+        searchBar = UISearchBar(frame:CGRectMake(0, 300, ks_screenWidth, 40))
+        searchBar.placeholder = "请输入要搜索的内容"
+        searchBar.searchBarStyle = UISearchBarStyle.Default
+        searchBar.delegate = self
+        searchBar.showsCancelButton = true
+        searchBar.returnKeyType = UIReturnKeyType.Done
+        self.view.addSubview(searchBar)
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
