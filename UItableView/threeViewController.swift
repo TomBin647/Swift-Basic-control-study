@@ -8,7 +8,7 @@
 
 import UIKit
 
-class threeViewController: UIViewController,UITextFieldDelegate {
+class threeViewController: UIViewController,UITextFieldDelegate,UISearchBarDelegate {
 
     var ks_screenWidth = UIScreen.mainScreen().bounds.size.width
     
@@ -19,6 +19,10 @@ class threeViewController: UIViewController,UITextFieldDelegate {
     var timer:NSTimer!
     
     var textField:UITextField!
+    
+    var toolBar:UIToolbar!
+    
+    var searchBar:UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +49,65 @@ class threeViewController: UIViewController,UITextFieldDelegate {
         textField.layer.borderColor =  UIColor.blueColor().CGColor
         textField.layer.borderWidth = 2
         // Do any additional setup after loading the view.
+    
+        toolBar = UIToolbar(frame: CGRectMake(0, ks_screenHight - 44, ks_screenWidth, 44))
+        toolBar.barStyle = UIBarStyle.Default
+        toolBar.tintColor = UIColor.blueColor()
+        toolBar.barTintColor = UIColor.redColor()
+        self.view.addSubview(toolBar)
+        
+        //创建一个间距
+        var flexibleSpace = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.FlexibleSpace, target:"barButtonItemClicked:", action:nil)
+        //创建一个返回按钮
+        var backItem = UIBarButtonItem(title: "返回", style:UIBarButtonItemStyle.Plain, target:self, action:"backItemClicked:")
+        //继续创建按钮
+        var barBtnItem1 = UIBarButtonItem(title: "第二页", style:UIBarButtonItemStyle.Plain, target:self, action:"secondbarBtnItemClicked:")
+        var barBtnItem2 = UIBarButtonItem(title: "搜索", style:UIBarButtonItemStyle.Plain, target:self, action:"threeBtnItemClicked:")
+        toolBar.items = [flexibleSpace, backItem, flexibleSpace, barBtnItem1, flexibleSpace, barBtnItem2,flexibleSpace]
+        
+        
         
     }
+    
+    func backItemClicked(sender:UIBarButtonItem) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    func secondbarBtnItemClicked(sender:UIBarButtonItem) {
+        NSLog("第二页")
+    }
+    
+    func threeBtnItemClicked(sender:UIBarButtonItem) {
+        NSLog("搜索按钮")
+        
+        if (searchBar != nil) {
+            searchBar.removeFromSuperview()
+            searchBar = UISearchBar(frame: CGRectMake(0, ks_screenHight-150, ks_screenWidth,44))
+            searchBar.placeholder = "请输入要搜索的内容"
+            searchBar.searchBarStyle = UISearchBarStyle.Default
+            searchBar.delegate = self
+            searchBar.showsCancelButton = true
+            searchBar.returnKeyType = UIReturnKeyType.Done
+            self.view.addSubview(searchBar)
+        } else {
+            searchBar = UISearchBar(frame: CGRectMake(0, ks_screenHight-150, ks_screenWidth,44))
+            searchBar.placeholder = "请输入要搜索的内容"
+            searchBar.searchBarStyle = UISearchBarStyle.Default
+            searchBar.delegate = self
+            searchBar.showsCancelButton = true
+            searchBar.returnKeyType = UIReturnKeyType.Done
+            self.view.addSubview(searchBar)
+        }
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
        return  textField.resignFirstResponder()
