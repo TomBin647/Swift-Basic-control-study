@@ -26,14 +26,7 @@ class threeViewController: UIViewController,UITextFieldDelegate,UISearchBarDeleg
     
     
     override func viewWillAppear(animated: Bool) {
-//        [[NSNotificationCenter defaultCenter] addObserver:self
-//            selector:@selector(keyboardWillShowHandler:)
-//        name:UIKeyboardWillShowNotification
-//        object:nil];
-//        [[NSNotificationCenter defaultCenter] addObserver:self
-//        selector:@selector(keyboardWillHideHandler:)
-//        name:UIKeyboardWillHideNotification
-//        object:nil];
+
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShowHandler:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHideHandler:", name: UIKeyboardWillHideNotification, object: nil)
     }
@@ -113,7 +106,7 @@ class threeViewController: UIViewController,UITextFieldDelegate,UISearchBarDeleg
         //创建一个返回按钮
         var backItem = UIBarButtonItem(title: "返回", style:UIBarButtonItemStyle.Plain, target:self, action:"backItemClicked:")
         //继续创建按钮
-        var barBtnItem1 = UIBarButtonItem(title: "第二页", style:UIBarButtonItemStyle.Plain, target:self, action:"secondbarBtnItemClicked:")
+        var barBtnItem1 = UIBarButtonItem(title: "下一页", style:UIBarButtonItemStyle.Plain, target:self, action:"secondbarBtnItemClicked:")
         var barBtnItem2 = UIBarButtonItem(title: "搜索", style:UIBarButtonItemStyle.Plain, target:self, action:"threeBtnItemClicked:")
         toolBar.items = [flexibleSpace, backItem, flexibleSpace, barBtnItem1, flexibleSpace, barBtnItem2,flexibleSpace]
         
@@ -125,7 +118,9 @@ class threeViewController: UIViewController,UITextFieldDelegate,UISearchBarDeleg
     }
     
     func secondbarBtnItemClicked(sender:UIBarButtonItem) {
-        NSLog("第二页")
+        NSLog("下一页")
+        var fourView = FourViewController()
+        self.navigationController?.pushViewController(fourView, animated: false)
     }
     
     func threeBtnItemClicked(sender:UIBarButtonItem) {

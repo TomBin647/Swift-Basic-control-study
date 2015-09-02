@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		223321191B9689AB0003B9E6 /* threeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223321181B9689AB0003B9E6 /* threeViewController.swift */; };
+		2233211B1B96D1FF0003B9E6 /* FourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2233211A1B96D1FF0003B9E6 /* FourViewController.swift */; };
 		2234A08B1B9574F800A78D8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2234A08A1B9574F800A78D8F /* AppDelegate.swift */; };
 		2234A08D1B9574F800A78D8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2234A08C1B9574F800A78D8F /* ViewController.swift */; };
 		2234A0901B9574F800A78D8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2234A08E1B9574F800A78D8F /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		223321181B9689AB0003B9E6 /* threeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = threeViewController.swift; sourceTree = "<group>"; };
+		2233211A1B96D1FF0003B9E6 /* FourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourViewController.swift; sourceTree = "<group>"; };
 		2234A0851B9574F800A78D8F /* UItableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UItableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2234A0891B9574F800A78D8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2234A08A1B9574F800A78D8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				2234A08C1B9574F800A78D8F /* ViewController.swift */,
 				22DC3C8D1B959E1B0059FA35 /* SecondViewController.swift */,
 				223321181B9689AB0003B9E6 /* threeViewController.swift */,
+				2233211A1B96D1FF0003B9E6 /* FourViewController.swift */,
 				2234A0AA1B95776000A78D8F /* FirstTableViewCell.swift */,
 				2234A08E1B9574F800A78D8F /* Main.storyboard */,
 				2234A0911B9574F800A78D8F /* Images.xcassets */,
@@ -227,6 +230,7 @@
 			files = (
 				223321191B9689AB0003B9E6 /* threeViewController.swift in Sources */,
 				22DC3C8E1B959E1B0059FA35 /* SecondViewController.swift in Sources */,
+				2233211B1B96D1FF0003B9E6 /* FourViewController.swift in Sources */,
 				2234A0AB1B95776000A78D8F /* FirstTableViewCell.swift in Sources */,
 				2234A08D1B9574F800A78D8F /* ViewController.swift in Sources */,
 				2234A08B1B9574F800A78D8F /* AppDelegate.swift in Sources */,
