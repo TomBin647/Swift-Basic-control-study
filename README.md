@@ -4,3 +4,5 @@ Swift-Basic-control-study
 
 
 最新加入了 swift与oc的混编模式    原文链接地址   http://blog.csdn.net/fengsh998/article/details/34440159
+
+添加了对于AFNetworking的混编  但是有个bug  目前没有解决 
