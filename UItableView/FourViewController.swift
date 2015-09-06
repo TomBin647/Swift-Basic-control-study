@@ -43,6 +43,14 @@ class FourViewController: UIViewController,UIActionSheetDelegate,UIPickerViewDat
         choosePickLabel.textColor = UIColor.blackColor()
         choosePickLabel.textAlignment = NSTextAlignment.Center
         self.view.addSubview(choosePickLabel)
+        
+        
+        
+        //调用oc 的类
+        var channel = hyBridViewController()
+        NSLog(channel.ChannelChange(10))
+        NSLog(channel.ChannelChange(2))
+        
     }
 
     func ChangeToActionSheet(sender:UIButton) {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2207DE3A1B9BD42E005B322D /* hyBridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2207DE391B9BD42E005B322D /* hyBridViewController.m */; };
+		2207DE3C1B9BD5DB005B322D /* act.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207DE3B1B9BD5DB005B322D /* act.swift */; };
 		223321191B9689AB0003B9E6 /* threeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223321181B9689AB0003B9E6 /* threeViewController.swift */; };
 		2233211B1B96D1FF0003B9E6 /* FourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2233211A1B96D1FF0003B9E6 /* FourViewController.swift */; };
 		2234A08B1B9574F800A78D8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2234A08A1B9574F800A78D8F /* AppDelegate.swift */; };
@@ -31,6 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2207DE371B9BD42E005B322D /* UItableView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UItableView-Bridging-Header.h"; sourceTree = "<group>"; };
+		2207DE381B9BD42E005B322D /* hyBridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hyBridViewController.h; sourceTree = "<group>"; };
+		2207DE391B9BD42E005B322D /* hyBridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hyBridViewController.m; sourceTree = "<group>"; };
+		2207DE3B1B9BD5DB005B322D /* act.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = act.swift; sourceTree = "<group>"; };
 		223321181B9689AB0003B9E6 /* threeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = threeViewController.swift; sourceTree = "<group>"; };
 		2233211A1B96D1FF0003B9E6 /* FourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourViewController.swift; sourceTree = "<group>"; };
 		2234A0851B9574F800A78D8F /* UItableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UItableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,15 +95,19 @@
 			children = (
 				2234A08A1B9574F800A78D8F /* AppDelegate.swift */,
 				2234A08C1B9574F800A78D8F /* ViewController.swift */,
+				2234A0AA1B95776000A78D8F /* FirstTableViewCell.swift */,
 				22DC3C8D1B959E1B0059FA35 /* SecondViewController.swift */,
 				223321181B9689AB0003B9E6 /* threeViewController.swift */,
 				2233211A1B96D1FF0003B9E6 /* FourViewController.swift */,
-				2234A0AA1B95776000A78D8F /* FirstTableViewCell.swift */,
+				2207DE381B9BD42E005B322D /* hyBridViewController.h */,
+				2207DE391B9BD42E005B322D /* hyBridViewController.m */,
+				2207DE3B1B9BD5DB005B322D /* act.swift */,
 				2234A08E1B9574F800A78D8F /* Main.storyboard */,
 				2234A0911B9574F800A78D8F /* Images.xcassets */,
 				22DC3C8B1B958CE50059FA35 /* wodehaizi@2x.png */,
 				2234A0931B9574F800A78D8F /* LaunchScreen.xib */,
 				2234A0881B9574F800A78D8F /* Supporting Files */,
+				2207DE371B9BD42E005B322D /* UItableView-Bridging-Header.h */,
 			);
 			path = UItableView;
 			sourceTree = "<group>";
@@ -232,7 +242,9 @@
 				22DC3C8E1B959E1B0059FA35 /* SecondViewController.swift in Sources */,
 				2233211B1B96D1FF0003B9E6 /* FourViewController.swift in Sources */,
 				2234A0AB1B95776000A78D8F /* FirstTableViewCell.swift in Sources */,
+				2207DE3C1B9BD5DB005B322D /* act.swift in Sources */,
 				2234A08D1B9574F800A78D8F /* ViewController.swift in Sources */,
+				2207DE3A1B9BD42E005B322D /* hyBridViewController.m in Sources */,
 				2234A08B1B9574F800A78D8F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,9 +372,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = UItableView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UItableView/UItableView-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -370,9 +385,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = UItableView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UItableView/UItableView-Bridging-Header.h";
 			};
 			name = Release;
 		};
