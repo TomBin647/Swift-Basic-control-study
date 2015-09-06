@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>9E081C8F-58AF-4959-9477-89037E8A79E6</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>UItableView</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>A48E37F3B979C1A67BFF5344C7AB436FE1705990</key>
 		<string>https://github.com/TomBin647/Swift-Basic-control-study.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>UItableView.xcodeproj/project.xcworkspace</string>
+	<string>UItableView.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A48E37F3B979C1A67BFF5344C7AB436FE1705990</key>
