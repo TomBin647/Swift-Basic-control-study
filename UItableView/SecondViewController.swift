@@ -49,8 +49,19 @@ class SecondViewController: UIViewController {
             button.tag = i + 3
             view1.addSubview(button)
         }
+        
+        var rightButton = UIBarButtonItem(title: "下一步", style: UIBarButtonItemStyle.Plain, target: self, action: "clickRightButton:")
+        //rightButton.setTitle("下一步", forState: UIControlState.Normal)
+        //rightButton.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
+        self.navigationItem.rightBarButtonItem = rightButton
+        
+        
     }
 
+    func clickRightButton(sender:UIBarButtonItem) {
+        NSLog("点击了下一步按钮")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
