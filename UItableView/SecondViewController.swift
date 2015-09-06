@@ -60,6 +60,8 @@ class SecondViewController: UIViewController {
 
     func clickRightButton(sender:UIBarButtonItem) {
         NSLog("点击了下一步按钮")
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

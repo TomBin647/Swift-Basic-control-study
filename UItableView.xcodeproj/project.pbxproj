@@ -20,6 +20,9 @@
 		2234A0AB1B95776000A78D8F /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2234A0AA1B95776000A78D8F /* FirstTableViewCell.swift */; };
 		22DC3C8C1B958CE50059FA35 /* wodehaizi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22DC3C8B1B958CE50059FA35 /* wodehaizi@2x.png */; };
 		22DC3C8E1B959E1B0059FA35 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DC3C8D1B959E1B0059FA35 /* SecondViewController.swift */; };
+		22DFDEE11B9C1E4300DD271B /* RequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DFDEE01B9C1E4300DD271B /* RequestClient.swift */; };
+		22DFDEE31B9C1FDE00DD271B /* RequestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DFDEE21B9C1FDE00DD271B /* RequestAPI.swift */; };
+		D7671D59A88A1147F17C7FBF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE48FCFF85AD2FE167DA21F /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1AE48FCFF85AD2FE167DA21F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2207DE371B9BD42E005B322D /* UItableView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UItableView-Bridging-Header.h"; sourceTree = "<group>"; };
 		2207DE381B9BD42E005B322D /* hyBridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hyBridViewController.h; sourceTree = "<group>"; };
 		2207DE391B9BD42E005B322D /* hyBridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hyBridViewController.m; sourceTree = "<group>"; };
@@ -52,6 +56,10 @@
 		2234A0AA1B95776000A78D8F /* FirstTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
 		22DC3C8B1B958CE50059FA35 /* wodehaizi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wodehaizi@2x.png"; sourceTree = "<group>"; };
 		22DC3C8D1B959E1B0059FA35 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		22DFDEE01B9C1E4300DD271B /* RequestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestClient.swift; sourceTree = "<group>"; };
+		22DFDEE21B9C1FDE00DD271B /* RequestAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestAPI.swift; sourceTree = "<group>"; };
+		46C04144FD3E6E3652F6192A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FEC021855DB86DF3BD8CF1F3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7671D59A88A1147F17C7FBF /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +87,8 @@
 				2234A0871B9574F800A78D8F /* UItableView */,
 				2234A09D1B9574F900A78D8F /* UItableViewTests */,
 				2234A0861B9574F800A78D8F /* Products */,
+				682B6A4381065182552D40EC /* Pods */,
+				B73B8FB2CE323BF5CA6FCFC2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +113,8 @@
 				2207DE381B9BD42E005B322D /* hyBridViewController.h */,
 				2207DE391B9BD42E005B322D /* hyBridViewController.m */,
 				2207DE3B1B9BD5DB005B322D /* act.swift */,
+				22DFDEE01B9C1E4300DD271B /* RequestClient.swift */,
+				22DFDEE21B9C1FDE00DD271B /* RequestAPI.swift */,
 				2234A08E1B9574F800A78D8F /* Main.storyboard */,
 				2234A0911B9574F800A78D8F /* Images.xcassets */,
 				22DC3C8B1B958CE50059FA35 /* wodehaizi@2x.png */,
@@ -137,6 +150,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		682B6A4381065182552D40EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				46C04144FD3E6E3652F6192A /* Pods.debug.xcconfig */,
+				FEC021855DB86DF3BD8CF1F3 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B73B8FB2CE323BF5CA6FCFC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1AE48FCFF85AD2FE167DA21F /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +174,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2234A0A41B9574F900A78D8F /* Build configuration list for PBXNativeTarget "UItableView" */;
 			buildPhases = (
+				1596A2A3F66E4EF6FFB59BB7 /* Check Pods Manifest.lock */,
 				2234A0811B9574F800A78D8F /* Sources */,
 				2234A0821B9574F800A78D8F /* Frameworks */,
 				2234A0831B9574F800A78D8F /* Resources */,
+				1CA79DB7B6161D9EF4BA1484 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -233,18 +265,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1596A2A3F66E4EF6FFB59BB7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1CA79DB7B6161D9EF4BA1484 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2234A0811B9574F800A78D8F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				223321191B9689AB0003B9E6 /* threeViewController.swift in Sources */,
+				22DFDEE11B9C1E4300DD271B /* RequestClient.swift in Sources */,
 				22DC3C8E1B959E1B0059FA35 /* SecondViewController.swift in Sources */,
 				2233211B1B96D1FF0003B9E6 /* FourViewController.swift in Sources */,
 				2234A0AB1B95776000A78D8F /* FirstTableViewCell.swift in Sources */,
 				2207DE3C1B9BD5DB005B322D /* act.swift in Sources */,
 				2234A08D1B9574F800A78D8F /* ViewController.swift in Sources */,
 				2207DE3A1B9BD42E005B322D /* hyBridViewController.m in Sources */,
+				22DFDEE31B9C1FDE00DD271B /* RequestAPI.swift in Sources */,
 				2234A08B1B9574F800A78D8F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,6 +437,7 @@
 		};
 		2234A0A51B9574F900A78D8F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46C04144FD3E6E3652F6192A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -383,6 +451,7 @@
 		};
 		2234A0A61B9574F900A78D8F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEC021855DB86DF3BD8CF1F3 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

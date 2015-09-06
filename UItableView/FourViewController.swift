@@ -51,7 +51,27 @@ class FourViewController: UIViewController,UIActionSheetDelegate,UIPickerViewDat
         NSLog(channel.ChannelChange(10))
         NSLog(channel.ChannelChange(2))
         
+        
+        
+        //调用afnetwork  请求数据
+        var dic:Dictionary<String,String> = ["A":"1","B":"2","C":"3"]
+        var getUrl:String = "http://m.weather.com.cn/atad/101190101.html"
+        
+        
+        //RequestAPI.POST(<#url: String!#>, body: <#AnyObject?#>, succeed: <#Succeed##(NSURLSessionDataTask!, AnyObject!) -> Void#>, failed: <#Failure##(NSURLSessionDataTask!, AnyObject!) -> Void#>)
+        //RequestAPI.GET(<#url: String!#>, body: <#AnyObject?#>, succeed: <#Succeed##(NSURLSessionDataTask!, AnyObject!) -> Void#>, failed: <#Failure##(NSURLSessionDataTask!, AnyObject!) -> Void#>)
+        
     }
+    
+    func succeed(task:NSURLSessionDataTask!,responseObject:AnyObject!)-> Void{
+        println("oh my god  成功了+\(responseObject)")
+    }
+    
+    func failed(task:NSURLSessionDataTask!,error:NSError!)-> Void{
+        println("oh shit 失败了")
+    }
+    
+    
 
     func ChangeToActionSheet(sender:UIButton) {
         if (MynewView != nil) {
